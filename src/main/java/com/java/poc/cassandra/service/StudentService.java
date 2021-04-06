@@ -29,12 +29,14 @@ public class StudentService {
 	private StudentRepository studentRepository;
 
 	public Student createNewStudent(Student student) {
-		return studentRepository.save(student);
+		Student studentResp =  studentRepository.save(student);
+		LOGGER.debug("\n\n***STUDENT IS CREATED SUCCESSFULLY***n\n");
+		return studentResp;
 	}
 
 	@Cacheable
 	public Student getStudent(String studentId) {
-		LOGGER.info("\n\n***STUDENT IS FETCHED FROM DB***\n\n");
+		LOGGER.debug("\n\n***STUDENT IS FETCHED FROM DB***\n\n");
 		Student studentDb = studentRepository.findByStudentId(UUID.fromString(studentId));
 		if (studentDb == null) {
 			throw new StudentNotFoundException("student doesn't exist!");
