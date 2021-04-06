@@ -36,7 +36,7 @@ public class StudentController {
 	}
 
 	@GetMapping("/student/{studentId}")
-	public ResponseEntity<?> getStudent(@PathVariable(required = true) String studentId) {
+	public ResponseEntity<?> getStudentFromdb(@PathVariable(required = true) String studentId) {
 		Student studentResp = studentService.getStudent(studentId);
 		return ResponseEntity.status(HttpStatus.OK).body(studentResp);
 	}

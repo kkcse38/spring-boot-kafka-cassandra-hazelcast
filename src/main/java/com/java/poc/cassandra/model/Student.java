@@ -1,5 +1,6 @@
 package com.java.poc.cassandra.model;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
@@ -11,7 +12,9 @@ import org.springframework.data.cassandra.core.mapping.Table;
  *
  */
 @Table("student")
-public class Student {
+public class Student implements Serializable{
+
+	private static final long serialVersionUID = 8471224925363162755L;
 
 	@PrimaryKey
 	private UUID studentId;
