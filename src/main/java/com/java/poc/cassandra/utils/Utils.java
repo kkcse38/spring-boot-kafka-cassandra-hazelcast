@@ -33,4 +33,8 @@ public class Utils {
 		return null;
 	}
 
+	public static void copyStudentProperty(Student source, Student target) {
+		//target.setEmail(stringUt);
+	}
+
 }
